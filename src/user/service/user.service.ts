@@ -24,6 +24,7 @@ export class UserService {
                 newUser.name = user.name;
                 newUser.email = user.email;
                 newUser.password = passwordhash;
+                newUser.role = user.role;
 
                 return from(this.userRepository.save(newUser)).pipe(
                     map((user: User) => {
